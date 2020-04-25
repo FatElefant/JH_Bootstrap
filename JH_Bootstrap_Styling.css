@@ -1,0 +1,79 @@
+/* Colour selection */
+/* Title text colour: xxxx */
+/* Text background colour: xxxxx */
+/* Dark background colour: xxxx */
+/* Light title text colour for use with dark background: xxxx */
+/* Font selection */
+/* Control navbar and footer heights*/
+/* Control widths of content and left/right navbars */
+/* ~~~~~~~~~~~~~ Setting up the basic grid ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+  background-color: lightseagreen;
+  display: grid;
+  grid-template-areas: "navbar1 navbar1 navbar1" "navbar2 navbar2 navbar2" "navbarleft sitecontent navbarright" "footer1 footer1 footer1" "footer2 footer2 footer2";
+  grid-column-gap: 0px;
+  margin: 0;
+  /* This is important for getting page elements to line up with the edges of the screen ('body' has some built in margin ...) */
+  /* Note: control the width of colums at top of page! */
+  grid-template-columns: 80px auto 80px;
+  /* Note: control the height at top of page! */
+  /* Note: Need to adjust script to help navbar2 stick to the top of the screen by matching the first entry of grid-template-rows */
+  grid-template-rows: 100px 50px auto 150px 200px; }
+
+#navbar1 {
+  grid-area: navbar1;
+  height: 100px;
+  background-color: darkslateblue;
+  width: 100%; }
+
+#navbar2 {
+  grid-area: navbar2;
+  height: 50px;
+  background-color: darkseagreen;
+  width: 100%;
+  box-sizing: content-box;
+  /* This turns our navbar into a grid itself, giving us better control of what our links look like */
+  display: grid;
+  /* Note: you needs as many columns as you have links */
+  grid-template-columns: auto auto auto;
+  justify-content: flex-start;
+  /* This puts the links on the left of the page */ }
+
+#navbarleft {
+  grid-area: navbarleft;
+  width: 80px;
+  background-color: darkslateblue; }
+
+#navbarright {
+  grid-area: navbarright;
+  width: 80px;
+  background-color: darkslateblue; }
+
+#footer1 {
+  grid-area: footer1;
+  height: 150px;
+  background-color: darkseagreen; }
+
+#footer2 {
+  grid-area: footer2;
+  height: 200px;
+  background-color: darkslateblue; }
+
+#sitecontentspace {
+  grid-area: sitecontent;
+  background-color: blanchedalmond; }
+
+/* ~~~~~  Content styling should come here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Styling for links in navbar 2 */
+.navbar2_link {
+  display: flex;
+  align-items: center;
+  /* This gets your links to sit in the middle of the navbar, no matter its size. */
+  font-weight: bold;
+  padding: 10px; }
+
+.navbar2_link:hover {
+  color: white;
+  background-color: red; }
+
+/*# sourceMappingURL=JH_Bootstrap_Styling.css.map */
